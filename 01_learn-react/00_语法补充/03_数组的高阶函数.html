@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const names = ["abc", "cba", "nba", "mba"];
+
+      /**
+       * 回调函数3个参数
+       *
+       */
+
+      const newNames = names.map((item, index, arr) => {
+        return item + "000";
+      });
+      console.log(newNames);
+
+      const infos = [
+        { id: 1, name: "ws" },
+        { id: 2, name: "ws2" },
+      ];
+
+      ids = infos.map((item) => item.id);
+      console.log(ids);
+
+      const nums = [1, 23, 3, 4, 5, 6, 7];
+      const newNums = nums.filter((item) => {
+        return item > 5;
+      });
+      console.log(newNums);
+    </script>
+  </body>
+</html>

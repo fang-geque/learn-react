@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1.引入依赖 -->
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script src="../react/babel.min.js"></script>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            movies: ["钢铁侠", "海王", "大秦赋"],
+          };
+
+          this.btnClick = this.btnClick.bind(this);
+        }
+
+        btnClick(e) {
+          console.log("按钮发生了电击", e);
+        }
+
+        liClick(item, index, e) {
+          console.log("li发生了点击", item, index, e);
+        }
+
+        render() {
+          return (
+            <div>
+              <button onClick={this.btnClick}>按钮</button>
+              <ul>
+                {this.state.movies.map((item, index) => {
+                  return (
+                    <li
+                      className="item"
+                      onClick={(e) => this.liClick(item, index, e)}
+                    >
+                      {item}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        }
+      }
+
+      function Index(){
+        
+        function btnClick(e,item){
+          console.log(e)
+          console.log(item)
+        }
+        
+        const btn2Click = (e,item)=>{
+          console.log(e)
+          console.log(item)
+        }
+
+        return(
+          <div>
+            <h2>我是函数式组件</h2>
+            <button onClick={e => btnClick(e,'item')}>按钮</button>
+            <button onClick={e => btn2Click(e,'item')}>按钮</button>
+          </div>
+        )
+      }
+
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

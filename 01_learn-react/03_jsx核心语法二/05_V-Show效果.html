@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1.引入依赖 -->
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script src="../react/babel.min.js"></script>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            message: "hello react",
+            isLogin: true,
+            names: [1,2,3,4,5]
+          };
+        }
+
+        loginClick() {
+          this.setState({
+            isLogin: !this.state.isLogin,
+          });
+        }
+
+        render() {
+          const { isLogin } = this.state;
+          const displayValue = isLogin ? "block" : "none";
+          return (
+            <div>
+              <h2 style={{ display: displayValue }}>你好啊，李银河</h2>
+              <button onClick={(e) => this.loginClick()}>
+                {isLogin ? " 退出" : "登录"}
+              </button>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
