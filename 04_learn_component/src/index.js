@@ -42,11 +42,20 @@ import "./index.css";
 
 // import App from "./11_高阶组件的使用/01_高阶组件的定义方式";
 // import App from "./11_高阶组件的使用/01_高阶组件的定义方式-函数式组件";
-import App from "./11_高阶组件的使用/02_高阶组件的应用-增强props";
+// import App from "./11_高阶组件的使用/02_高阶组件的应用-增强props";
+// import App from "./11_高阶组件的使用/04_高阶组件的应用-增强props-改进";
+// import App from "./11_高阶组件的使用/05_高阶组件应用-登录鉴权操作";
+// import App from "./11_高阶组件的使用/07_高阶组件应用-生命周期劫持-增强";
+
+// import App from "./12_组件内容补充/01_ref的转发";
+// import App from "./12_组件内容补充/02_portals的使用";
+// import App from "./12_组件内容补充/03_fragments的使用";
+import App from "./12_组件内容补充/04_strictMode的使用";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App name="ws"/>
+    <App name="ws" />
   </React.StrictMode>,
   document.getElementById("root")
 );

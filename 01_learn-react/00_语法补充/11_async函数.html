@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const mySettime = async () => {
+        let r = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(3);
+          }, 3000);
+        });
+
+        return r;
+      };
+
+      const myAsync = async () => {
+        const res = await mySettime();
+        console.log(res);
+        console.log(1111);
+      };
+
+      // myAsync();
+
+      function timeout(ms) {
+        return new Promise((resolve, reject) => {
+          setTimeout(resolve, ms, "done");
+        });
+      }
+
+      timeout(100)
+        .then((value) => {
+          return value;
+        })
+        .then((res) => {
+          console.log(res); //done
+        });
+    </script>
+  </body>
+</html>
