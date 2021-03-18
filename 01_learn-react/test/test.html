@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2>你好呀，李银河</h2>
+      <div>
+        设五位数a679b,同时是5和9的倍数，则A是多少,B是多少？
+      </div>
+    </div>
+
+    <script>
+      let a = 1;
+      let b = 0;
+      while (a < 10) {
+        if (
+          (a * 10000 + 6 * 1000 + 7 * 100 + 9 * 10 + b) % 5 == 0 &&
+          (a * 10000 + 6 * 1000 + 7 * 100 + 9 * 10 + b) % 9 == 0
+        ) {
+          console.log("a", a); // a = 5
+          console.log("b", b); // b = 0
+        }
+        a += 1;
+      }
+
+      a = 1;
+      b = 5;
+      while (a < 10) {
+        if (
+          (a * 10000 + 6 * 1000 + 7 * 100 + 9 * 10 + b) % 5 == 0 &&
+          (a * 10000 + 6 * 1000 + 7 * 100 + 9 * 10 + b) % 9 == 0
+        ) {
+          console.log("a", a); // a = 9
+          console.log("b", b); // a = 5
+        }
+        a += 1;
+      }
+    </script>
+  </body>
+</html>
